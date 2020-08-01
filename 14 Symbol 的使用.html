@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol的使用</title>
+</head>
+<body>
+
+
+<script>
+    //给对象添加独一无二的属性或方法
+    let  game = {
+        name:'yhx',
+        up :function(){},
+        down:function(){}
+    };
+    //给game对象添加  与up。down有关的方法
+    //若不知道game中是否有up 和down 方法
+    //首先 声明一个对象
+    let methods = {
+        up:Symbol(),
+        down:Symbol()
+    };
+    game[methods.up]=function(){
+        console.log("hhhh");
+    };
+    game[methods.down]=function(){
+        console.log("lueluel");
+    };
+    console.log(game);
+
+    let youxi = {
+        name:'wzry',
+        //添加方法：
+        //Symbol()是一个动态属性不是一个固定的值
+        //Symbol():function(){} //不允许该写法
+        [Symbol('say')]:function(){
+            console.log('hehh');
+        },
+        [Symbol('zibao')]:function(){
+            console.log('ppppp');
+        }
+    };
+    console.log(youxi);
+</script>
+</body>
+</html>

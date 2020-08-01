@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展运算符的应用</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+
+<script>
+    //数组的合并
+    const YHX = ['22','11'];
+    const SY = ['zs','la'];
+    //const HB = YHX.concat(SY);
+    const HB = [...YHX,...SY];
+    console.log(HB);
+
+    //数组的克隆
+    const LL = ['G','E','M'];
+    const QQ = [...LL];
+    console.log(QQ);
+
+    //将 伪数组 转换为真正的数组
+    const DIV = document.querySelectorAll('div');
+    console.log(DIV);  //此时是一个对象
+    const DIVARR = [...DIV];
+    console.log(DIVARR);  //对象转为数组 arguments也可以转
+</script>
+
+</body>
+</html>

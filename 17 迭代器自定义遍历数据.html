@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义遍历数据</title>
+</head>
+<body>
+
+
+<script>
+    const banji = {
+        name:'ban',
+        stus:[
+            'sy',
+            'yhx',
+            'zs',
+            'la'
+        ],
+        [Symbol.iterator](){
+            let index = 0;
+            let _this = this;
+            return {
+                next:function(){
+                    if(index < _this.stus.length){
+                        const result = {value:_this.stus[index],done:false};
+                        index++;
+                        return result;
+                    }else{
+                        return {value:undefined,done:true};
+                    }
+
+                }
+            }
+        }
+    };
+    for(let v of banji){
+        //若在对象上不进行迭代器的定义此时使用for of 会报错
+        console.log(v);
+    }
+
+</script>
+</body>
+</html>

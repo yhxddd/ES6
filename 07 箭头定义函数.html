@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>箭头函数</title>
+</head>
+<body>
+
+<script>
+
+    //let fn = function(){}
+/*
+    let fn = (a,b)=>{
+        return a+b;
+    };
+    let result = fn(1,2);
+    console.log(result);
+
+    //1 箭头函数的this 是静态的 始终指向函数声明时所在作用域下的this的值
+    function getName(){
+        console.log(this.name);
+    }
+    let getName2= ()=>{
+        console.log(this.name);
+    };
+    //设置window对象的name属性
+    window.name = 'yhx';
+    const SCHOOL={
+        name:'ZBDX'
+    };
+    //直接调用  时 this指向全局的window
+    getName();
+    getName2();
+    //call 方法调用 可改变内部this的值
+    getName.call(SCHOOL);  //"ZBDX"
+    getName2.call(SCHOOL);//"yhx"  箭头函数始终指向全局window
+
+
+    //2 不能作为构造实例化对象
+    let Person = (name,age) => {
+        this.name = name;
+        this.age = age;
+    };
+    let me = new Person('yhx',20);
+    console.log(me);  //报错  因为箭头函数不能实例化对象
+*/
+
+
+    //3 不能使用arguments变量 （用于保存实参）
+    let fn = ()=>{
+        console.log(arguments);
+    };
+    fn(1,2,3);  //报错
+
+    //4 箭头函数的简写
+        //4.1 省略小括号 ：当形参有且只有一个
+        //let add = n =>{return n+n}
+    let add = (n) => {
+        return n+n;
+    };
+    console.log(add(2));
+        //4.2 省略花括号： 当代码体只有一句 此时的return 也必须省略
+    //语句的执行结果就是函数的返回值
+    /*let pow = n=>{
+        return n*n;
+    };*/
+    let pow = n => n*n ;
+    console.log(pow(2));
+
+
+</script>
+</body>
+</html>

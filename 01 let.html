@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let的基本知识</title>
+</head>
+<body>
+
+<script>
+    //let 用于声明变量
+    //let a,b,c;
+    //let d=100,e='iloveyou',h=[];
+
+    //1  let声明变量时不能重复声明  var 可进行重复声明
+    let star='yhx';
+    //let star='sy'; //会报错
+
+    //2  块级作用域：即let声明的变量的作用域处于一对{}中间，超出不可访问
+    if(true){
+        let a = 10;
+        console.log(a);
+    }
+    //console.log(a); //访问不到
+    for(let i=1;i<3;i++){
+        console.log(i); //访问得到
+    }
+    //console.log(i);//访问不到
+
+    //3  不存在变量提升：即必须先声明再使用
+   // console.log(song);
+    //let song ='hhhhh';  //会报错
+
+    //4 不影响作用域链
+    {
+        let school = "zbdx";
+        function fn(){
+            console.log(school)
+        }
+        fn();  //不会报错  调用函数 没有变量则向上一级寻找
+    }
+
+    //5  暂时死区
+    var ll=10;
+    if(true){
+        let ll=50;
+        console.log(ll);
+    } //此时ll 打印为50  与上面的var 无关
+</script>
+</body>
+</html>

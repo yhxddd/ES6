@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol内置值</title>
+</head>
+<body>
+
+
+<script>
+    //改变对象在特定场景下的表现
+    //Symbol对象的属性
+    class Person{
+        //hasInstance 当其他对象使用instanceof运算符判断是否为该对象的实例时
+        static [Symbol.hasInstance](param){
+            console.log(param); //将 instanceof前面的值传递给param
+            console.log("检测类型");
+        }
+    }
+    let p ={};
+    console.log(p instanceof Person);
+
+
+    const arr1 =[1,2,3];
+    const arr2 = [4,5,6];
+    //控制该数组是否可以在concat的时候展开（分割成用逗号隔开的单个元素）
+    arr2[Symbol.isConcatSpreadable] = false;
+    console.log(arr1.concat(arr2));
+
+
+</script>
+</body>
+</html>

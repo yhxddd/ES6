@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数参数默认值</title>
+</head>
+<body>
+
+
+<script>
+    //可给形参赋初值  具有初值的参数一般在最后
+    function add(a,b,c=10){
+        return a+b+c;
+    }
+    let result = add(1,2);
+    console.log(result);
+
+
+    //可与解构赋值结合使用
+    /*function connection(options){
+        let host = options.host;
+        let username = options.username;
+    } 出现options的重复  与解构结合:*/
+    function connection({host="127.0.0.1",username,password,port}){
+        console.log(host);
+        console.log(username);
+        console.log(password);
+        console.log(port);
+    }
+
+    connection({
+       // host:'localhost',
+        username:'root',
+        password:'root',
+        port:3306
+    })
+</script>
+</body>
+</html>

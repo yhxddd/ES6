@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象的简化</title>
+</head>
+<body>
+
+<script>
+    //ES6允许再{} 里面直接写入变量和函数 作为对象的属性和方法
+    let name='yhx';
+
+    let change = function(){
+        console.log('change!');
+    };
+    const SCHOOL = {
+        name,  //name:name, change:change
+        change,
+        improve:function(){
+            console.log('improve');
+        }
+        //可简写为 improve(){}
+    };
+    console.log(SCHOOL);
+</script>
+</body>
+</html>

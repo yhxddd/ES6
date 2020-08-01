@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol的用法</title>
+</head>
+<body>
+
+
+<script>
+
+    //Symbol 是一种数据类型 表示独一无二的值
+    //Symbol 的值是唯一的，用来解决命名冲突的问题
+    // Symbol值不能与其他数据进行运算
+    //Symbol定义的对象属性不能使用 for 循环遍历，可使用Reflect.ownKeys获取对象所有的键名
+
+    //创建Symbol
+    let s = Symbol();  //函数创建
+    console.log(s,typeof s);
+
+    let s2 = Symbol('zbdx');//描述字符串
+    let s3 = Symbol('zbdx');
+    //此时该Symbol 中字符串只作为一个标志
+    console.log(s2===s3);//返回false  说明二者不一样
+
+
+    //函数对象
+    let s4 = Symbol.for('zbdx'); //此时Symbol是一个对象
+    console.log(s4,typeof s4);
+    let s5 = Symbol.for('zbdx');
+    console.log(s5,typeof s5);
+    console.log(s4 === s5); //返回true 表示Symbol是唯一的
+
+    //以下三种均会报错
+   // let result = s + 100;
+    // let result = s>1000;
+    // let result = s + '100' //字符串拼接
+
+    //JS数据类型
+
+</script>
+
+</body>
+</html>

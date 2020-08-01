@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>迭代器</title>
+</head>
+<body>
+
+<script>
+    //Iterator接口就是对象中的一种属性
+    //迭代器是一种接口，为各种不同的数据结构提供同意的访问机制
+    //任何数据结构只要部署Iterator接口 就可以完成遍历操作
+    // Iterator 主要供 for...of使用
+    //Array Arguments Set Map String TypeArray NodeList 均部署了Iterator接口
+
+    const xx = ['yhx','sy','zs'];
+    for(let v of xx){
+        console.log(v);  //打印的是值
+        //若使用 for in 则打印的是 0 1 2
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生成器函数的定义和说明</title>
+</head>
+<body>
+
+
+<script>
+
+    //生成器函数 用于  异步编程
+    /*  function * gen(){
+          // * 可以靠左可以靠右  但必须在俩个中间
+          console.log("hello~");
+      }
+      let iterator = gen();
+      //console.log(iterator);  //这时是一个对象 里面包含了很多对象
+      iterator.next();  //指向 hello
+   */
+
+      //生成器中可以出现 yield 语句
+      //yield 算是 函数代码的分隔符
+    /*  function * gun(){
+          console.log(111);
+          yield '略略略';//yield后面跟表达式或自变量
+          console.log(222);
+          yield '哈哈哈哈';
+          console.log(333);
+          yield 'yhx';
+          console.log(444)
+          //三个yield 将一个函数分为四块
+      }
+      let iterator = gun();
+      iterator.next();    //当gun函数里面没有console.log时，这时为空
+      iterator.next();
+      iterator.next();
+      iterator.next(); //控制输出 console.log中的内容
+*/
+
+    function * gun(){
+        yield '略略略';//yield后面跟表达式或自变量
+        yield '哈哈哈哈';
+        yield 'yhx';
+        //三个yield 将一个函数分为四块
+    }
+    //遍历打印yield的内容
+    for(let v of gun()){
+        console.log(v);
+    }
+    let iterator = gun();
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+    console.log(iterator.next());
+
+
+
+</script>
+
+</body>
+</html>
