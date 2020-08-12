@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发送AJAX请求</title>
+</head>
+<body>
+<script>
+    //接口地址：https://api.apiopen.top/getJoke
+
+    /*普通ajax
+    //创建对象
+    const xhr = new XMLHttpRequest();
+    //初始化
+    xhr.open("GET","https://api.apiopen.top/getJoke");
+    //发送
+    xhr.send();
+    //绑定事件处理响应结果
+    xhr.onreadystatechange = function(){
+        //判断
+        if(xhr.readyState === 4){
+            // 判断相应该状态码200-299
+            if(xhr.status >= 200 && xhr.status < 300){
+                //表示成功
+                console.log(xhr.response);
+            }else{
+                //如果失败
+                console.error(xhr.status)
+            }
+        }
+    }*/
+    //  promise封装ajax
+    const p = new Promise((resolve,reject) => {
+        //创建对象
+        const xhr = new XMLHttpRequest();
+        //初始化
+        xhr.open("GET","https://api.apiopen.top/getJoke");
+        //发送
+        xhr.send();
+        //绑定事件处理响应结果
+        xhr.onreadystatechange = function() {
+            //判断
+            if (xhr.readyState === 4) {
+                // 判断相应该状态码200-299
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    //表示成功
+                    resolve(xhr.response);
+                } else {
+                    //如果失败
+                    reject(xhr.status)
+                }
+            }
+        }
+    });
+    //指定回调函数
+    p.then(function(value){
+        console.log(value)
+    },function(reason){
+        console.error(reason)
+    })
+</script>
+
+</body>
+</html>
