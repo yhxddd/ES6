@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set实践</title>
+</head>
+<body>
+
+<script>
+    let arr = [1,2,3,4,5,4,3,2,1];
+    //数组去重
+    //let result = new Set(arr); //此时arr变为集合
+    //let result = [...new Set(arr)];// 变为数组
+    //console.log(result);
+
+    //求交集
+    let arr2 = [4,5,6,5,6];
+    /*let result1 = [...new Set(arr)].filter(item => {
+        let s2 = new Set(arr2);// 4,5,6
+        if(s2.has(item)){
+            return true
+        }else{
+            return false
+        }
+    });*/
+    //简化：
+    let result1 = [...new Set(arr)].filter(item => new Set(arr2).has(item));
+    console.log(result1);
+
+    //求并集
+    let result2 = [...new Set([...arr, ...arr2])];
+    //  先...arr,...arr2 将两数组合并 再new set去重 再将其转化为数组
+    console.log(result2);
+
+    //求差集
+    let diff = [...new Set(arr)].filter(item => !(new Set(arr2).has(item)));
+    console.log(diff)
+</script>
+</body>
+</html>

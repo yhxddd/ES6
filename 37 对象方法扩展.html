@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象方法扩展</title>
+</head>
+<body>
+<script>
+    //Object.is 判断两个值是否完全相等
+    console.log(Object.is(120,121));
+    //Object.assign 对象的合并
+    const config = {
+        host:'localhost',
+        port: 3306,
+        name: 'root',
+        pass: 'root',
+        test:'test'
+    };
+    const config2 = {
+        host:'zbdx.com',
+        port:3300,
+        name:'ss',
+        pass:'dd'
+    };
+    console.log(Object.assign(config,config2));
+    //重名的属性  后面覆盖前面
+
+    //Object.setPrototypeOf 设置原型对象
+    //Object.getPrototypeOf 获取原型对象
+
+    const school = {
+
+        name:'zbdx'
+    };
+    const student = {
+        xueke:'dashuju'
+    };
+    Object.setPrototypeOf(school,student);
+    console.log(school);// 原型对象在 _proto_中
+    console.log(Object.getPrototypeOf(school))
+</script>
+
+</body>
+</html>

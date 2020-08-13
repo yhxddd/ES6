@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get set</title>
+</head>
+<body>
+<script>
+    //get set
+    class Phone {
+        get price(){
+            // 通常对对象的动态属性进行封装
+            console.log('价格');
+            return '2000';
+        }
+        set price(newVal){
+            //  设置可以增加更多属性或者进行判断
+            console.log('change')
+        }
+    }
+    let s = new Phone();
+    console.log(s.price);// 触发get方法 get中return的值就是改行代码返回的值
+    s.price = 'free'  //触发set方法
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模块化</title>
+</head>
+<body>
+
+<script type="module">
+    //将一个大文件拆分成多个小文件 再将每个小文件组合起来
+    //ES6 模块化语法 主要由两个命令构成export（向外暴露一个对象） 和 import（引入一个文件/功能）
+
+    //引入模块化.js的内容
+        //通用导入：
+    /*
+    import * as m1 from './39-模块化分别暴露.js'
+    console.log(m1);
+    import * as m2 from './40-模块化统一暴露.js'
+    console.log(m2);
+    import * as m3 from './41-模块化默认暴露.js'
+    console.log(m3);
+    m3.default.change()
+    */
+
+         //解构赋值形式
+    import {school,teach} from './39-模块化分别暴露.js'
+    console.log(school);
+    console.log(teach);
+
+    import {school as xx,study} from './40-模块化统一暴露.js'
+    console.log(xx);
+    console.log(study);
+    //默认暴露：
+    import {default as m3} from './41-模块化默认暴露.js'
+    console.log(m3);
+
+    //简便形式:  只能针对默认暴露
+    import mm from './41-模块化默认暴露.js'
+    console.log(mm)
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类继承</title>
+</head>
+<body>
+
+<script>
+    class Phone {
+        //构造方法
+        constructor(brand,price) {
+            this.brand = brand;
+            this.price = price
+        }
+        //父类成员属性
+        call(){
+            console.log('我是父类~')
+        }
+    }
+    class SmartPhone extends Phone {
+        //构造方法
+        constructor(brand,price,color) {
+            super(brand,price);//super()相当于父类的构造方法
+            this.color = color
+        }
+        photo () {
+            console.log('photo')
+        }
+        call(){
+            //  子类对父类方法重写  子类不能调用父类的同名方法
+            console.log('我是子类');
+        }
+    }
+    const xiaomi = new SmartPhone('xiaomi',2000,'baise');
+    console.log(xiaomi);
+    xiaomi.call();// 调用子类的call方法
+    xiaomi.photo()
+</script>
+</body>
+</html>

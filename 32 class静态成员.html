@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>静态成员</title>
+</head>
+<body>
+
+<script>
+    //ES5举例：
+     /*
+    function Phone(){}
+    // 往 函数对象上添加属性和方法
+    Phone.name = 'hh';
+    Phone.change = function(){
+        console.log('change')
+    };
+    // name 和change()是属于函数对象(类)的 不属于实例对象-----静态成员
+
+    //实例对象
+    let xiaomi = new Phone();
+    console.log(xiaomi)*/
+     class Phone {
+         //用static定义的属性和方法只属于类 不属于实例对象
+         static name = 'xiaomi';
+         static change () {
+             console.log('xiaomi')
+         }
+     }
+     let xiaomi = new Phone();
+    console.log(xiaomi.name);//undefined
+    console.log(Phone.name) //xiaomi
+</script>
+</body>
+</html>

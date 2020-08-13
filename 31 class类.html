@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>class类</title>
+</head>
+<body>
+
+<script>
+    //  ES5 用构造函数创建类 :
+    /*
+    function Phone(brand,price){
+        this.brand = brand;
+        this.price = price;
+    }
+    //  添加方法:
+    Phone.prototype.call = function () {
+        console.log('callcall~')
+    };
+    //  实例化对象
+    let huawei = new Phone('华为','20000');
+    huawei.call();
+    console.log(huawei)
+*/
+
+    //  ES6 使用class：
+    class Phone {
+        // 构造方法
+        constructor(brand,price) {
+            this.brand = brand;
+            this.price = price;
+        }
+        // 方法:
+        //方法必须使用该语法 不能写ES5的完整形式
+        call() {
+            console.log('call~')
+        }
+    }
+    let iphone = new Phone('apple',100000)
+    console.log(iphone)
+</script>
+</body>
+</html>

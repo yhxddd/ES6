@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+
+<script>
+    function Phone(brand,price){
+        this.brand = brand;
+        this.price = price
+    }
+    Phone.prototype.call = function(){
+        console.log('shouji')
+    };
+    function SmartPhone(brand,price,color){
+        Phone.call(this,brand,price);
+        this.color = color
+    }
+    //设置子构造函数的原型
+    SmartPhone.prototype = new Phone;//子类上有父类的构造方法
+    SmartPhone.prototype.constructor = SmartPhone;
+    //声明子类的方法
+    SmartPhone.prototype.photo = function(){
+        console.log('photo')
+    };
+    const xx = new SmartPhone('xx',2000,'黑色')
+    console.log(xx)
+</script>
+</body>
+</html>

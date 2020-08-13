@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数值扩展</title>
+</head>
+<body>
+<script>
+    //  Number.EPSILON 是js表示的最小精度
+    //EPSILON属性的值接近于 2.22044604..... 常用于浮点数计算
+    console.log(0.1 + 0.2 === 0.3); //返回false
+    function equal (a,b){
+        if(Math.abs(a-b)<Number.EPSILON){
+            return true
+        }else{
+            return false
+        }
+    }
+    console.log(equal(0.1 + 0.2, 0.3)); //返回true
+
+    //二进制和八进制
+    let b = 0b1010; //二进制0b开头 后面才是数值
+    let o = 0o777; //八进制0o开头
+    let x = 0xff;//十六进制0x开头
+    console.log(b);
+    console.log(o);
+    console.log(x);
+
+    //Number.isFinite 检测一个数值是否为有限数 返回boolean
+    console.log(Number.isFinite(100));//true
+
+    //Number.isNaN 检测一个数值是否为NaN
+    console.log(Number.isNaN(123));//false
+
+    //Number.parseInt   Number.parseFloat 字符串转数字
+    console.log(Number.parseInt('1233ddd'));//1233
+    console.log(Number.parseFloat('3.1233fff'));//3.1233
+
+    //Number.isInteger 判断一个数是否为整数
+    console.log(Number.isInteger(5));//true
+
+    //Math.trunc 将数字的小数部分抹掉
+    console.log(Math.trunc(3.111)); //3
+
+    //Math.sign() 检测一个数到底是正数 负数还是0
+    console.log(Math.sign(100));// 1
+    console.log(Math.sign(0));  // 0
+    console.log(Math.sign(-2000))// -1
+</script>
+
+</body>
+</html>

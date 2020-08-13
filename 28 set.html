@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据结构set</title>
+</head>
+<body>
+
+<script>
+    //  数据结构set(集合) 类似于数组 但成员的值都是唯一的
+    //  集合实现了iterator接口 所以可以使用【 扩展运算符】 和 【for...of】遍历
+    //  集合的属性和方法: size:返回集合的元素个数  add增加一个新的元素返回当前集合
+                   //    delete删除元素 返回boolean值  has检测集合中是否包含某元素 返回boolean
+
+    //声明一个set
+    let s = new Set();
+    let s2 = new Set(['yhx','sy','zs','yhx']);
+    console.log(s,typeof s);
+    console.log(s2); // 会自动去重
+
+    // 集合个数
+    console.log(s2.size);
+    //添加元素
+    s2.add('liu');
+    console.log(s2);
+    //删除
+    s2.delete('zs');
+    console.log(s2);
+    //检测
+    console.log(s2.has('yhx'));
+    console.log(s2.has('zs'));
+    //清空
+    //s2.clear();
+    //console.log(s2)
+    //遍历
+    for(let v of s2){
+        console.log(v)
+    }
+</script>
+</body>
+</html>
